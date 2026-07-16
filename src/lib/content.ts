@@ -18,7 +18,8 @@ export const profileSocials: SocialLink[] = [
   { label: "Dribbble", href: "https://dribbble.com/", icon: "dribbble" },
   { label: "Twitter", href: "https://twitter.com/", icon: "twitter" },
   { label: "Instagram", href: "https://www.instagram.com/", icon: "instagram" },
-  { label: "YouTube", href: "https://www.youtube.com/", icon: "youtube" },
+  // Original template links its 4th (YouTube-glyph) icon to mailto:
+  { label: "Email", href: "mailto:your@email.com", icon: "youtube" },
 ];
 
 export const hero = {
@@ -118,10 +119,4 @@ export const budgetOptions: BudgetOption[] = [
 export const footer = {
   madeBy: { label: "Templyo", href: "https://templyo.io/templates" },
   poweredBy: { label: "Framer", href: "https://www.framer.com" },
-  socials: [
-    { label: "Dribbble", href: "https://dribbble.com/", icon: "dribbble" },
-    { label: "Twitter", href: "https://twitter.com/", icon: "twitter" },
-    { label: "Instagram", href: "https://www.instagram.com/", icon: "instagram" },
-    { label: "Email", href: "mailto:your@email.com", icon: "mail" },
-  ] satisfies SocialLink[],
 };

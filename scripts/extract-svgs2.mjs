@@ -1,4 +1,4 @@
-import { readFileSync, writeFileSync } from "node:fs";
+import { readFileSync } from "node:fs";
 const html = readFileSync("docs/research/raw/index.html", "utf8");
 
 // mask syntax variants
