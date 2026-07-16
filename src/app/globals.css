@@ -13,13 +13,17 @@
   /* sawad.framer.website design tokens */
   --color-page: #151312;
   --color-cream: #faf7f3;
-  --color-text-muted: #998f8f;
+  --color-warmgray: #998f8f;
   --color-lime: #c5ff41;
   --color-orange: #f46c38;
   --color-gray-mid: #6a6b6e;
   --color-hairline: #b6b4bd33;
   --color-near-black: #111;
   --color-ghost: rgba(182, 180, 189, 0.2);
+  /* Framer breakpoints: phone <810, tablet 810-1079, laptop 1080-1439, desktop >=1440 */
+  --breakpoint-tab: 810px;
+  --breakpoint-lap: 1080px;
+  --breakpoint-desk: 1440px;
   --color-sidebar-ring: var(--sidebar-ring);
   --color-sidebar-border: var(--sidebar-border);
   --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
