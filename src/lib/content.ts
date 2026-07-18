@@ -92,13 +92,27 @@ export const jobs: Job[] = [
   {
     company: "Themisoft GmbH",
     description:
-      "Core engineer on a 6,800-file multi-tenant SaaS serving 300+ fitness studios. Shipped SEPA billing, OIDC security, and OCR automation that cut manual work ~75% — while cutting backend latency 40% and cloud costs 62%.",
+      "Full-Stack .NET Developer on a 10-project ABP platform with 6,800+ C# files, 1,100+ application services, and 580+ EF Core migrations. The SaaS supports 300+ fitness studios and thousands of active users across Germany, Austria, and Poland.",
+    highlights: [
+      "Own end-to-end delivery across contracts, memberships, SEPA direct debit, payments, Fiskaly POS fiscalization, bookings, campaigns, communications, and studio administration.",
+      "Built subdomain-based multi-tenancy, tenant-aware entities, OpenIddict/OIDC flows, JWT issuer validation, and permission-based access; integrated FinAPI, SEPA, Fiskaly, eBrief, and MailKit.",
+      "Cut backend response time 40% and increased throughput 35% through EF Core/PostgreSQL optimization; reduced cloud costs ~62% with Redis and Hangfire, and reduced manual work ~75% through Tesseract OCR and document automation.",
+      "Maintain 300+ xUnit tests, review pull requests, support production issues, and helped onboard two developers.",
+    ],
+    stack: ["C#", ".NET 10", "ASP.NET Core", "ABP", "Blazor", "PostgreSQL", "Redis", "Hangfire", "SignalR", "Azure"],
     period: "Dec 2023 - Present",
   },
   {
     company: "EPAM Systems",
     description:
-      "Built B2B e-commerce backend services with CQRS, RabbitMQ, and Elasticsearch — cut catalog search from 2s to 150ms and shipped through Dockerized CI/CD on Azure DevOps.",
+      "Junior .NET Backend Developer on a microservice-based B2B e-commerce platform for a European industrial-equipment distributor, supporting corporate ordering, dynamic pricing, catalog search, inventory, checkout, and order processing.",
+    highlights: [
+      "Developed REST APIs and backend workflows for Catalog Service, Pricing Engine, Inventory Background Worker, cart, checkout, and order processing using MediatR/CQRS and RabbitMQ.",
+      "Moved heavy catalog filtering from EF Core SQL to Elasticsearch with Redis caching, reducing average search latency from 1.5-2 seconds to ~150 ms and PostgreSQL CPU load by 40%.",
+      "Resolved inventory race conditions and malformed XML/JSON supplier feeds using Kibana logs; added unit and integration coverage with xUnit, Moq, AutoFixture, and Bogus.",
+      "Delivered in Dockerized Azure DevOps CI/CD with AKS and Helm as part of a cross-functional Scrum team.",
+    ],
+    stack: ["C#", "ASP.NET Core", "EF Core", "PostgreSQL", "CQRS", "RabbitMQ", "Redis", "Elasticsearch", "Docker", "AKS"],
     period: "May 2021 - Aug 2022",
   },
 ];
@@ -120,21 +134,39 @@ export const tools: Tool[] = [
 
 export const articles: Article[] = [
   {
-    title: "Taming a 6,800-File ABP Codebase",
+    title: "Inside a 300-Tenant SaaS: Lessons from 6,800+ C# Files",
     excerpt:
-      "Working across 1,100+ application services teaches you discipline: strict layering, tenant-aware entities, and migrations you can trust. Here is what keeps a large modular monolith maintainable.",
-    date: "Mar 12, 2026",
+      "A 10-project modular monolith with 1,100+ application services and 580+ EF Core migrations only stays maintainable through strict boundaries, tenant-aware domain rules, disciplined migrations, and tests that protect business-critical workflows.",
+    meta: "Architecture · Production",
   },
   {
     title: "Cutting Cloud Costs 62% with Redis & Hangfire",
     excerpt:
-      "Distributed caching, distributed locks, and consolidated background jobs did more for our Azure bill than any instance right-sizing. A practical walkthrough of what moved the needle.",
-    date: "Jan 20, 2026",
+      "Redis-backed caching and distributed locks, combined with consolidated Hangfire workloads and better query shaping, improved throughput by 35% while helping reduce measured cloud infrastructure costs by approximately 62%.",
+    meta: "Performance · Production",
+  },
+  {
+    title: "From Paperwork to Workflow: OCR in Production",
+    excerpt:
+      "Tesseract OCR, barcode and webcam capture, and PDF processing turned repetitive document handling into a reliable workflow. The result was about 75% less manual back-office work without removing human review where it matters.",
+    meta: "Automation · Production",
   },
   {
     title: "From 2 Seconds to 150ms: Search Done Right",
     excerpt:
-      "Moving heavy catalog filtering out of EF Core SQL into Elasticsearch with a Redis cache in front reduced search latency by an order of magnitude and cut PostgreSQL CPU load 40%.",
-    date: "Nov 4, 2025",
+      "Moving filtering and aggregations from EF Core-generated SQL to Elasticsearch, with Redis caching in front, reduced average catalog latency from 1.5-2 seconds to ~150 ms and lowered PostgreSQL CPU load by 40%.",
+    meta: "Search · Production",
+  },
+  {
+    title: "Why C# 14 Extension Members Matter",
+    excerpt:
+      "Extension blocks in .NET 10 go beyond familiar extension methods: they can group behavior and expose extension properties, helping APIs read more naturally while keeping reusable operations organized around the types they extend.",
+    meta: ".NET 10 · LinkedIn",
+  },
+  {
+    title: "Practical AI Skills Over Flashy Demos",
+    excerpt:
+      "The AI tools worth keeping are the ones that improve everyday engineering: clearer reasoning, more predictable output, stronger discipline, and lower token usage. Practicality and repeatability matter more than a one-off impressive demo.",
+    meta: "AI Tooling · LinkedIn",
   },
 ];

@@ -25,6 +25,8 @@ export interface Project {
 export interface Job {
   company: string;
   description: string;
+  highlights: string[];
+  stack: string[];
   period: string;
 }
 
@@ -38,5 +40,5 @@ export interface Tool {
 export interface Article {
   title: string;
   excerpt: string;
-  date: string;
+  meta: string;
 }

@@ -20,7 +20,7 @@ export function BlogSection() {
               </h3>
               <p className="text-base leading-[1.4] text-warmgray">{a.excerpt}</p>
             </div>
-            <p className="text-base leading-[1.1] text-warmgray">{a.date}</p>
+            <p className="text-sm font-medium uppercase tracking-[0.08em] text-orange">{a.meta}</p>
           </article>
         ))}
       </div>
