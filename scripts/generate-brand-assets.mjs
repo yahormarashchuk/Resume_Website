@@ -17,10 +17,23 @@ const LOGOS = [
   { slug: "redis", color: "FF4438", file: "tool-redis.png" },
   { slug: "docker", color: "2496ED", file: "tool-docker.png" },
   { slug: "rabbitmq", color: "FF6600", file: "tool-rabbitmq.png" },
+  { slug: "typescript", color: "3178C6", file: "tool-typescript.png" },
+  { slug: "elasticsearch", color: "005571", file: "tool-elasticsearch.png" },
+  { slug: "kubernetes", color: "326CE5", file: "tool-kubernetes.png" },
+  { slug: "git", color: "F05032", file: "tool-git.png" },
+  // C# and Azure are not on Simple Icons (Microsoft brands) — pull from devicon
+  {
+    url: "https://raw.githubusercontent.com/devicons/devicon/master/icons/csharp/csharp-original.svg",
+    file: "tool-csharp.png",
+  },
+  {
+    url: "https://raw.githubusercontent.com/devicons/devicon/master/icons/azure/azure-original.svg",
+    file: "tool-azure.png",
+  },
 ];
 
-for (const { slug, color, file } of LOGOS) {
-  const res = await fetch(`https://cdn.simpleicons.org/${slug}/${color}`);
+for (const { slug, color, url, file } of LOGOS) {
+  const res = await fetch(url ?? `https://cdn.simpleicons.org/${slug}/${color}`);
   if (!res.ok) {
     console.error(`FAILED ${slug}: HTTP ${res.status}`);
     continue;

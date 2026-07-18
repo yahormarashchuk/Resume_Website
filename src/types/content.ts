@@ -42,8 +42,3 @@ export interface Article {
   readTime: string;
   href: string;
 }
-
-export interface BudgetOption {
-  label: string;
-  value: string;
-}

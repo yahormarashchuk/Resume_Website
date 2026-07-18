@@ -1,4 +1,4 @@
-import type { Article, BudgetOption, Job, NavItem, Project, SocialLink, Stat, Tool } from "@/types/content";
+import type { Article, Job, NavItem, Project, SocialLink, Stat, Tool } from "@/types/content";
 
 export const navItems: NavItem[] = [
   { label: "Home", href: "#", icon: "home" },
@@ -74,12 +74,18 @@ export const jobs: Job[] = [
 ];
 
 export const tools: Tool[] = [
+  { name: "C#", category: "Language", href: "https://learn.microsoft.com/dotnet/csharp/", image: "/images/tool-csharp.png" },
   { name: ".NET", category: "Backend Framework", href: "https://dotnet.microsoft.com/", image: "/images/tool-dotnet.png" },
   { name: "Blazor", category: "Frontend Framework", href: "https://dotnet.microsoft.com/apps/aspnet/web-apps/blazor", image: "/images/tool-blazor.png" },
+  { name: "TypeScript", category: "Language", href: "https://www.typescriptlang.org/", image: "/images/tool-typescript.png" },
   { name: "PostgreSQL", category: "Database", href: "https://www.postgresql.org/", image: "/images/tool-postgresql.png" },
   { name: "Redis", category: "Caching & Locks", href: "https://redis.io/", image: "/images/tool-redis.png" },
-  { name: "Docker", category: "Containers", href: "https://www.docker.com/", image: "/images/tool-docker.png" },
+  { name: "Elasticsearch", category: "Search Engine", href: "https://www.elastic.co/elasticsearch", image: "/images/tool-elasticsearch.png" },
   { name: "RabbitMQ", category: "Messaging", href: "https://www.rabbitmq.com/", image: "/images/tool-rabbitmq.png" },
+  { name: "Docker", category: "Containers", href: "https://www.docker.com/", image: "/images/tool-docker.png" },
+  { name: "Kubernetes", category: "Orchestration", href: "https://kubernetes.io/", image: "/images/tool-kubernetes.png" },
+  { name: "Azure", category: "Cloud & DevOps", href: "https://azure.microsoft.com/", image: "/images/tool-azure.png" },
+  { name: "Git", category: "Version Control", href: "https://git-scm.com/", image: "/images/tool-git.png" },
 ];
 
 export const articles: Article[] = [
@@ -109,15 +115,3 @@ export const articles: Article[] = [
   },
 ];
 
-export const budgetOptions: BudgetOption[] = [
-  { label: "Select…", value: "" },
-  { label: "<$3k", value: "<$3k" },
-  { label: "$3k - $5k", value: "$3k - $5k" },
-  { label: "$5k - $10k", value: "$5k - $10k" },
-  { label: ">$10k", value: ">$10k" },
-];
-
-export const footer = {
-  madeBy: { label: "Templyo", href: "https://templyo.io/templates" },
-  poweredBy: { label: "Framer", href: "https://www.framer.com" },
-};

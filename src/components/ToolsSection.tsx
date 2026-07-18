@@ -6,7 +6,7 @@ import { tools } from "@/lib/content";
 export function ToolsSection() {
   return (
     <section id="tools" className="flex w-full flex-col gap-5 pt-[120px]">
-      <SectionTitle solid="PREMIUM" ghost="TOOLS" />
+      <SectionTitle solid="SKILLS &" ghost="TECHNOLOGY" />
       <div className="grid grid-cols-1 gap-2.5 tab:grid-cols-3 lap:grid-cols-2">
         {tools.map((tool) => (
           <a
