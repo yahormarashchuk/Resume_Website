@@ -11,11 +11,15 @@ export const navItems: NavItem[] = [
 export const profile = {
   name: "Yahor Marashchuk",
   bio: "Full-Stack .NET Developer with 4+ years shipping multi-tenant SaaS used by 300+ studios across Europe.",
-  photo: "/images/yahor-profile-indigo-v2.webp",
+  photo: "/images/yahor-profile-indigo-v3.webp",
 };
 
 export const profileSocials: SocialLink[] = [
-  { label: "LinkedIn", href: "https://www.linkedin.com/in/yahor-marashchuk", icon: "linkedin" },
+  {
+    label: "LinkedIn",
+    href: "https://www.linkedin.com/in/yahor-marashchuk-63528b377",
+    icon: "linkedin",
+  },
   { label: "Email", href: "mailto:yahormarashchuk@gmail.com", icon: "mail" },
 ];
 
@@ -120,23 +124,17 @@ export const articles: Article[] = [
     excerpt:
       "Working across 1,100+ application services teaches you discipline: strict layering, tenant-aware entities, and migrations you can trust. Here is what keeps a large modular monolith maintainable.",
     date: "Mar 12, 2026",
-    readTime: "6min read",
-    href: "#blog",
   },
   {
     title: "Cutting Cloud Costs 62% with Redis & Hangfire",
     excerpt:
       "Distributed caching, distributed locks, and consolidated background jobs did more for our Azure bill than any instance right-sizing. A practical walkthrough of what moved the needle.",
     date: "Jan 20, 2026",
-    readTime: "5min read",
-    href: "#blog",
   },
   {
     title: "From 2 Seconds to 150ms: Search Done Right",
     excerpt:
       "Moving heavy catalog filtering out of EF Core SQL into Elasticsearch with a Redis cache in front reduced search latency by an order of magnitude and cut PostgreSQL CPU load 40%.",
     date: "Nov 4, 2025",
-    readTime: "5min read",
-    href: "#blog",
   },
 ];

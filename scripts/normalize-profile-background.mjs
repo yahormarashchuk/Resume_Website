@@ -73,13 +73,15 @@ for (let pixelIndex = 0; pixelIndex < pixelCount; pixelIndex += 1) {
 }
 
 const targetAspect = 240 / 284;
-const cropWidth = Math.floor(info.width * 0.84);
-const cropHeight = Math.floor(cropWidth / targetAspect);
-const cropLeft = Math.floor((info.width - cropWidth) / 2);
-const cropTop = Math.min(
-  info.height - cropHeight,
-  Math.floor(info.height * 0.27),
+const sourceAspect = info.width / info.height;
+const cropWidth = Math.floor(
+  sourceAspect > targetAspect ? info.height * targetAspect : info.width,
 );
+const cropHeight = Math.floor(
+  sourceAspect > targetAspect ? info.height : info.width / targetAspect,
+);
+const cropLeft = Math.floor((info.width - cropWidth) / 2);
+const cropTop = Math.floor((info.height - cropHeight) / 2);
 
 await sharp(data, {
   raw: {

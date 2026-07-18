@@ -39,6 +39,4 @@ export interface Article {
   title: string;
   excerpt: string;
   date: string;
-  readTime: string;
-  href: string;
 }
