@@ -11,7 +11,7 @@ export const navItems: NavItem[] = [
 export const profile = {
   name: "Yahor Marashchuk",
   bio: "A Full-Stack .NET Developer building multi-tenant SaaS used by 300+ studios across Europe.",
-  photo: "/images/profile.jpg",
+  photo: "/images/yahor-marashchuk.jpg",
 };
 
 export const profileSocials: SocialLink[] = [
