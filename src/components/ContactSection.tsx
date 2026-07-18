@@ -4,18 +4,57 @@ import { useState, type FormEvent } from "react";
 import { SectionTitle } from "@/components/SectionTitle";
 
 const CONTACT_EMAIL = "yahormarashchuk@gmail.com";
+const WEB3FORMS_KEY = process.env.NEXT_PUBLIC_WEB3FORMS_KEY;
+
+type SendState = "idle" | "sending" | "sent" | "error";
 
 export function ContactSection() {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [message, setMessage] = useState("");
+  const [state, setState] = useState<SendState>("idle");
 
-  const handleSubmit = (e: FormEvent<HTMLFormElement>) => {
+  const handleSubmit = async (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    const subject = `Portfolio contact from ${name || "your website"}`;
-    const body = `${message}\n\n— ${name}${email ? ` <${email}>` : ""}`;
-    window.location.href = `mailto:${CONTACT_EMAIL}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+    if (!WEB3FORMS_KEY) {
+      // No API key configured — fall back to the visitor's mail client
+      const subject = `Portfolio contact from ${name || "your website"}`;
+      const body = `${message}\n\n— ${name}${email ? ` <${email}>` : ""}`;
+      window.location.href = `mailto:${CONTACT_EMAIL}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+      return;
+    }
+    setState("sending");
+    try {
+      const res = await fetch("https://api.web3forms.com/submit", {
+        method: "POST",
+        headers: { "Content-Type": "application/json", Accept: "application/json" },
+        body: JSON.stringify({
+          access_key: WEB3FORMS_KEY,
+          subject: `Portfolio contact from ${name || "your website"}`,
+          from_name: name,
+          email,
+          message,
+        }),
+      });
+      const data: { success: boolean } = await res.json();
+      if (!data.success) throw new Error("submission rejected");
+      setState("sent");
+      setName("");
+      setEmail("");
+      setMessage("");
+    } catch {
+      setState("error");
+    }
   };
+
+  const buttonLabel =
+    state === "sending"
+      ? "Sending…"
+      : state === "sent"
+        ? "Message sent ✓"
+        : state === "error"
+          ? "Something went wrong — try again"
+          : "Submit";
 
   return (
     <section id="contact" className="flex w-full flex-col items-start gap-[50px] pt-[120px]">
@@ -62,9 +101,10 @@ export function ContactSection() {
         </label>
         <button
           type="submit"
-          className="flex h-10 w-full items-center justify-center rounded-lg bg-orange text-sm font-medium text-white transition hover:brightness-110"
+          disabled={state === "sending"}
+          className="flex h-10 w-full items-center justify-center rounded-lg bg-orange text-sm font-medium text-white transition hover:brightness-110 disabled:opacity-70"
         >
-          Submit
+          {buttonLabel}
         </button>
       </form>
     </section>
