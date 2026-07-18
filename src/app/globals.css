@@ -10,16 +10,16 @@
   --font-sans: var(--font-poppins), ui-sans-serif, system-ui, sans-serif;
   --font-satoshi: var(--font-satoshi), var(--font-poppins), sans-serif;
   --font-heading: var(--font-sans);
-  /* sawad.framer.website design tokens */
-  --color-page: #151312;
-  --color-cream: #faf7f3;
-  --color-warmgray: #998f8f;
-  --color-lime: #c5ff41;
-  --color-orange: #f46c38;
-  --color-gray-mid: #6a6b6e;
-  --color-hairline: #b6b4bd33;
+  /* Cobalt Neon design tokens (originally sawad.framer.website) */
+  --color-page: #0a0e1a;
+  --color-cream: #f2f5ff;
+  --color-warmgray: #8b93a8;
+  --color-lime: #22d3ee;
+  --color-orange: #4f46e5;
+  --color-gray-mid: #5b6478;
+  --color-hairline: #8ca0ff1f;
   --color-near-black: #111;
-  --color-ghost: rgba(182, 180, 189, 0.2);
+  --color-ghost: rgba(160, 180, 255, 0.12);
   /* Framer breakpoints: phone <810, tablet 810-1079, laptop 1080-1439, desktop >=1440 */
   --breakpoint-tab: 810px;
   --breakpoint-lap: 1080px;

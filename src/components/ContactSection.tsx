@@ -24,7 +24,7 @@ export function ContactSection() {
         <div className="flex flex-col gap-5 tab:flex-row">
           <div className="flex-1">
             <label className="flex w-full flex-col gap-2.5">
-              <span className="text-xs font-medium text-[#888888]">Name</span>
+              <span className="text-xs font-medium text-[#6b7590]">Name</span>
               <div className="flex h-10 w-full items-center rounded-lg bg-ghost px-3">
                 <input
                   type="text"
@@ -38,7 +38,7 @@ export function ContactSection() {
           </div>
           <div className="flex-1">
             <label className="flex w-full flex-col gap-2.5">
-              <span className="text-xs font-medium text-[#888888]">Email</span>
+              <span className="text-xs font-medium text-[#6b7590]">Email</span>
               <div className="flex h-10 w-full items-center rounded-lg bg-ghost px-3">
                 <input
                   type="email"
