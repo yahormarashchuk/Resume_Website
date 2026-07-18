@@ -185,6 +185,8 @@ const SOCIAL_MASKS = {
   twitter: "/images/icons/twitter.svg",
   instagram: "/images/icons/instagram.svg",
   youtube: "/images/icons/youtube.svg",
+  linkedin: "/images/icons/linkedin.svg",
+  mail: "/images/icons/mail.svg",
 } as const;
 
 export function SocialGlyph({

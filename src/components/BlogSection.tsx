@@ -9,7 +9,7 @@ import { articles } from "@/lib/content";
 export function BlogSection() {
   return (
     <section id="blog" className="flex w-full flex-col gap-5 pt-[120px]">
-      <SectionTitle solid="DESIGN" ghost="THOUGHTS" />
+      <SectionTitle solid="DEV" ghost="THOUGHTS" />
       <div className="flex w-full flex-col">
         {articles.map((a) => (
           <a

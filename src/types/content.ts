@@ -7,7 +7,7 @@ export interface NavItem {
 export interface SocialLink {
   label: string;
   href: string;
-  icon: "dribbble" | "twitter" | "instagram" | "youtube" | "mail";
+  icon: "dribbble" | "twitter" | "instagram" | "youtube" | "linkedin" | "mail";
 }
 
 export interface Stat {

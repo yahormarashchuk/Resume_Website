@@ -1,13 +1,6 @@
 import Image from "next/image";
 import { SocialGlyph } from "@/components/icons";
 import { profile, profileSocials } from "@/lib/content";
-import type { SocialLink } from "@/types/content";
-
-type GlyphIcon = Exclude<SocialLink["icon"], "mail">;
-
-function hasGlyph(link: SocialLink): link is SocialLink & { icon: GlyphIcon } {
-  return link.icon !== "mail";
-}
 
 export function ProfileCard() {
   return (
@@ -45,7 +38,7 @@ export function ProfileCard() {
             {profile.bio}
           </p>
           <div className="flex flex-row justify-center gap-4">
-            {profileSocials.filter(hasGlyph).map((social) => (
+            {profileSocials.map((social) => (
               <a
                 key={social.label}
                 href={social.href}

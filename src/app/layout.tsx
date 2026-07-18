@@ -16,12 +16,14 @@ const satoshi = localFont({
 });
 
 export const metadata: Metadata = {
-  title: "Sawad",
-  description: "A sleek and modern portfolio template designed for creatives",
+  title: "Yahor Marashchuk — Full-Stack .NET Developer",
+  description:
+    "Full-Stack .NET Developer building multi-tenant SaaS and enterprise web applications with C#, ASP.NET Core, Blazor, and Azure.",
   icons: { icon: "/seo/favicon.png" },
   openGraph: {
-    title: "Sawad",
-    description: "A sleek and modern portfolio template designed for creatives",
+    title: "Yahor Marashchuk — Full-Stack .NET Developer",
+    description:
+      "Full-Stack .NET Developer building multi-tenant SaaS and enterprise web applications with C#, ASP.NET Core, Blazor, and Azure.",
     images: ["/seo/og-image.png"],
   },
 };

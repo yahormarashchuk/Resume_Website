@@ -9,7 +9,7 @@ import { jobs } from "@/lib/content";
 export function ExperienceSection() {
   return (
     <section id="experience" className="flex w-full flex-col gap-5 overflow-hidden pt-[120px]">
-      <SectionTitle solid="12 YEARS OF" ghost="EXPERIENCE" />
+      <SectionTitle solid="4 YEARS OF" ghost="EXPERIENCE" />
       <div className="flex w-full flex-col">
         {jobs.map((job) => (
           <div
