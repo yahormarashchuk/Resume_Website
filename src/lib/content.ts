@@ -11,7 +11,7 @@ export const navItems: NavItem[] = [
 export const profile = {
   name: "Yahor Marashchuk",
   bio: "Full-Stack .NET Developer with 4+ years shipping multi-tenant SaaS used by 300+ studios across Europe.",
-  photo: "/images/yahor-blue.jpg",
+  photo: "/images/yahor-profile-2026.webp",
 };
 
 export const profileSocials: SocialLink[] = [
@@ -32,10 +32,36 @@ export const stats: Stat[] = [
   { value: "−62%", lines: ["CLOUD COSTS", "DELIVERED"] },
 ];
 
-export const heroCards = {
-  orange: { text: "OPEN TO WORK · EU BLUE CARD · GERMANY", href: "#contact" },
-  lime: { text: ".NET, BLAZOR, POSTGRESQL, AZURE", href: "#projects" },
-};
+export const heroCards = [
+  {
+    eyebrow: "Availability",
+    title: "Open to work",
+    icon: "layers",
+    href: "#contact",
+    tags: ["EU Blue Card", "Germany"],
+  },
+  {
+    eyebrow: "Core stack",
+    title: ".NET · Blazor",
+    icon: "stack",
+    href: "#tools",
+    tags: ["PostgreSQL", "Azure"],
+  },
+  {
+    eyebrow: "Driving license",
+    title: "Class B",
+    icon: "car",
+    href: "#contact",
+    tags: ["Car licensed"],
+  },
+  {
+    eyebrow: "Based in",
+    title: "Bad Waldsee, DE",
+    icon: "location",
+    href: "#contact",
+    tags: ["Remote-friendly"],
+  },
+] as const;
 
 export const projects: Project[] = [
   {
@@ -114,4 +140,3 @@ export const articles: Article[] = [
     href: "#blog",
   },
 ];
-
