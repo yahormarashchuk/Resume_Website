@@ -1,7 +1,44 @@
-import Image from "next/image";
-import { HoverArrow } from "@/components/HoverArrow";
-import { LayersIcon, LayoutIcon } from "@/components/icons";
+import { CarFront, Layers3, MapPin, PanelsTopLeft, type LucideIcon } from "lucide-react";
 import { hero, heroCards, stats } from "@/lib/content";
+
+type HeroCardStyle = {
+  background: string;
+  rail: string;
+  icon: LucideIcon;
+  text: string;
+  chip: string;
+};
+
+const cardStyles: Record<(typeof heroCards)[number]["icon"], HeroCardStyle> = {
+  layers: {
+    background: "bg-[#5140d9]",
+    rail: "bg-white/10",
+    icon: Layers3,
+    text: "text-white",
+    chip: "bg-white/15 text-white",
+  },
+  stack: {
+    background: "bg-[#22bfd4]",
+    rail: "bg-black/[0.06]",
+    icon: PanelsTopLeft,
+    text: "text-[#07111f]",
+    chip: "bg-black/[0.08] text-[#07111f]",
+  },
+  car: {
+    background: "bg-[#f79a2e]",
+    rail: "bg-black/[0.07]",
+    icon: CarFront,
+    text: "text-[#241405]",
+    chip: "bg-black/[0.08] text-[#241405]",
+  },
+  location: {
+    background: "bg-[#e851a5]",
+    rail: "bg-white/15",
+    icon: MapPin,
+    text: "text-white",
+    chip: "bg-white/15 text-white",
+  },
+};
 
 export function HeroSection() {
   return (
@@ -15,14 +52,14 @@ export function HeroSection() {
         <p className="max-w-[480px] text-lg leading-[1.4] text-warmgray">{hero.intro}</p>
       </div>
 
-      <div className="flex flex-row items-center gap-10">
+      <div className="grid w-full grid-cols-3 gap-3 tab:flex tab:flex-row tab:items-center tab:gap-10">
         {stats.map((stat) => (
-          <div key={stat.value} className="flex flex-col">
-            <p className="text-[70px] font-semibold leading-[1.2] tracking-[-0.7px] text-white">
+          <div key={stat.value} className="flex min-w-0 flex-col">
+            <p className="text-[42px] font-semibold leading-[1.2] tracking-[-0.7px] text-white tab:text-[70px]">
               {stat.value}
             </p>
             {stat.lines.map((line) => (
-              <p key={line} className="text-base leading-[1.2] tracking-[-0.16px] text-warmgray">
+              <p key={line} className="text-xs leading-[1.2] tracking-[-0.16px] text-warmgray tab:text-base">
                 {line}
               </p>
             ))}
@@ -30,68 +67,39 @@ export function HeroSection() {
         ))}
       </div>
 
-      <div className="flex flex-col gap-5 lap:h-[260px] lap:flex-row">
-        <a
-          href={heroCards.orange.href}
-          className="group relative flex h-[212px] w-full flex-col items-start gap-6 overflow-hidden rounded-[10px] bg-orange px-5 pb-[22px] pt-10 lap:h-[260px] lap:w-[260px] lap:shrink-0"
-        >
-          <Image
-            src="/images/doodles/orange-line-a.svg"
-            alt=""
-            aria-hidden
-            width={388}
-            height={155}
-            className="absolute -left-[58px] -top-[57px] max-w-none"
-          />
-          <Image
-            src="/images/doodles/orange-line-b.svg"
-            alt=""
-            aria-hidden
-            width={388}
-            height={155}
-            className="absolute -left-[54px] top-[106px] max-w-none"
-          />
-          <LayersIcon className="relative z-10 h-[41px] w-[38px] text-white" strokeWidth={2} />
-          <div className="relative z-10 flex w-full flex-1 flex-col items-end justify-between">
-            <p className="max-w-[220px] self-start text-2xl font-medium leading-[1.1] text-white">
-              {heroCards.orange.text}
-            </p>
-            <span className="flex size-8 items-center justify-center rounded-[6px]">
-              <HoverArrow className="text-white" />
-            </span>
-          </div>
-        </a>
+      <div className="grid grid-cols-1 gap-4 tab:grid-cols-2">
+        {heroCards.map((card) => {
+          const styles = cardStyles[card.icon];
+          const Icon = styles.icon;
 
-        <a
-          href={heroCards.lime.href}
-          className="group relative flex h-[212px] w-full flex-col items-start gap-6 overflow-hidden rounded-[10px] bg-lime px-5 pb-[22px] pt-10 lap:h-[260px] lap:flex-1"
-        >
-          <Image
-            src="/images/doodles/lime-line.svg"
-            alt=""
-            aria-hidden
-            width={422}
-            height={284}
-            className="absolute -right-[36px] -top-[60px] max-w-none"
-          />
-          <Image
-            src="/images/doodles/lime-line.svg"
-            alt=""
-            aria-hidden
-            width={422}
-            height={284}
-            className="absolute -left-[36px] top-[166px] max-w-none rotate-[4deg]"
-          />
-          <LayoutIcon className="relative z-10 h-[41px] w-[38px] text-page" strokeWidth={2} />
-          <div className="relative z-10 flex w-full flex-1 flex-col items-end justify-between">
-            <p className="max-w-[346px] self-start text-2xl font-medium leading-[1.1] text-page">
-              {heroCards.lime.text}
-            </p>
-            <span className="flex size-8 items-center justify-center rounded-[6px]">
-              <HoverArrow className="text-page" />
-            </span>
-          </div>
-        </a>
+          return (
+            <a
+              key={card.eyebrow}
+              href={card.href}
+              className={`group relative flex min-h-[180px] overflow-hidden rounded-[20px] transition-transform duration-300 hover:-translate-y-1 ${styles.background} ${styles.text}`}
+            >
+              <div className={`flex w-[60px] shrink-0 items-center justify-center ${styles.rail}`}>
+                <Icon aria-hidden className="size-6 transition-transform duration-300 group-hover:scale-110" strokeWidth={2.5} />
+              </div>
+              <div className="flex min-w-0 flex-1 flex-col px-5 py-5">
+                <p className="text-[11px] font-semibold uppercase leading-none tracking-[0.12em] opacity-60">
+                  {card.eyebrow}
+                </p>
+                <p className="mt-2 text-[21px] font-semibold leading-tight">{card.title}</p>
+                <div className="mt-auto flex flex-wrap gap-2 pt-5">
+                  {card.tags.map((tag) => (
+                    <span
+                      key={tag}
+                      className={`rounded-full px-3 py-1 text-xs font-semibold leading-none ${styles.chip}`}
+                    >
+                      {tag}
+                    </span>
+                  ))}
+                </div>
+              </div>
+            </a>
+          );
+        })}
       </div>
     </section>
   );

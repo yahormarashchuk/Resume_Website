@@ -6,28 +6,14 @@ export function ProfileCard() {
   return (
     <div className="animate-fade-in relative flex w-full flex-col items-center gap-6 overflow-hidden rounded-2xl bg-white px-5 py-[30px] lap:h-[640px] lap:w-[344px]">
       <Image
-        src="/images/doodles/card-circle.svg"
-        alt=""
-        aria-hidden
-        width={194}
-        height={100}
-        className="absolute -top-[18px] left-1/2 -translate-x-1/2"
-      />
-      <Image
         src={profile.photo}
         alt={profile.name}
         width={240}
         height={284}
         priority
+        unoptimized
+        sizes="240px"
         className="h-[284px] w-[240px] rounded-2xl object-cover"
-      />
-      <Image
-        src="/images/doodles/card-squiggle.svg"
-        alt=""
-        aria-hidden
-        width={270}
-        height={166}
-        className="absolute top-[348px] left-1/2 -translate-x-1/2"
       />
       <div className="relative z-10 flex w-full flex-1 flex-col items-center justify-between">
         <p className="text-center text-4xl leading-[1.1] font-bold tracking-[-1.44px] text-black">

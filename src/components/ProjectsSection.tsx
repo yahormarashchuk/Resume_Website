@@ -1,12 +1,9 @@
 import Image from "next/image";
-import { HoverArrow } from "@/components/HoverArrow";
 import { SectionTitle } from "@/components/SectionTitle";
 import { projects } from "@/lib/content";
 
 /**
- * "RECENT PROJECTS" section: heading plus a list of project rows.
- * Each row is a link with thumbnail, title/subtitle, and the orange
- * hover-swap arrow pinned to the top-right.
+ * "RECENT PROJECTS" section with linked thumbnail, title, and subtitle rows.
  */
 export function ProjectsSection() {
   return (
@@ -17,7 +14,7 @@ export function ProjectsSection() {
           <a
             key={project.title}
             href={project.href}
-            className="group relative flex w-full items-center justify-between overflow-hidden rounded-2xl px-4 py-5"
+            className="relative flex w-full items-center justify-between overflow-hidden rounded-2xl px-4 py-5"
           >
             <div className="flex flex-row items-center gap-5">
               <Image
@@ -32,9 +29,6 @@ export function ProjectsSection() {
                 <p className="text-base leading-[1.4] text-warmgray">{project.subtitle}</p>
               </div>
             </div>
-            <span className="absolute right-4 top-9">
-              <HoverArrow />
-            </span>
           </a>
         ))}
       </div>
