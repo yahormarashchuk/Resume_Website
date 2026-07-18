@@ -25,11 +25,11 @@ const cardStyles: Record<(typeof heroCards)[number]["icon"], HeroCardStyle> = {
     chip: "bg-black/[0.08] text-[#07111f]",
   },
   car: {
-    background: "bg-[#f79a2e]",
-    rail: "bg-black/[0.07]",
+    background: "bg-[#4f46e5]",
+    rail: "bg-white/10",
     icon: CarFront,
-    text: "text-[#241405]",
-    chip: "bg-black/[0.08] text-[#241405]",
+    text: "text-white",
+    chip: "bg-white/15 text-white",
   },
   location: {
     background: "bg-[#e851a5]",
