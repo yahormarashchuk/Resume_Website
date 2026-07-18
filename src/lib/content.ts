@@ -10,8 +10,8 @@ export const navItems: NavItem[] = [
 
 export const profile = {
   name: "Yahor Marashchuk",
-  bio: "A Full-Stack .NET Developer building multi-tenant SaaS used by 300+ studios across Europe.",
-  photo: "/images/yahor-marashchuk.jpg",
+  bio: "Full-Stack .NET Developer with 4+ years shipping multi-tenant SaaS used by 300+ studios across Europe.",
+  photo: "/images/yahor-blue.jpg",
 };
 
 export const profileSocials: SocialLink[] = [
@@ -23,36 +23,36 @@ export const hero = {
   titleSolid: "FULLSTACK",
   titleGhost: "DEVELOPER",
   intro:
-    "Passionate about building multi-tenant SaaS and enterprise web applications with C#, ASP.NET Core, Blazor, and Azure.",
+    "I build multi-tenant SaaS on C#, ASP.NET Core, Blazor & Azure — and I ship measurable impact: −40% backend latency, −62% cloud costs, ~75% less manual work through automation.",
 };
 
 export const stats: Stat[] = [
   { value: "+4", lines: ["YEARS OF", "EXPERIENCE"] },
-  { value: "+300", lines: ["STUDIOS", "SERVED"] },
-  { value: "+1000", lines: ["ACTIVE", "USERS"] },
+  { value: "+300", lines: ["STUDIOS ON MY", "PLATFORM"] },
+  { value: "−62%", lines: ["CLOUD COSTS", "DELIVERED"] },
 ];
 
 export const heroCards = {
-  orange: { text: "MULTI-TENANT SAAS, CLEAN ARCHITECTURE", href: "#experience" },
+  orange: { text: "OPEN TO WORK · EU BLUE CARD · GERMANY", href: "#contact" },
   lime: { text: ".NET, BLAZOR, POSTGRESQL, AZURE", href: "#projects" },
 };
 
 export const projects: Project[] = [
   {
     title: "Fitness Studio SaaS",
-    subtitle: "Multi-tenant ABP platform for 300+ studios",
+    subtitle: "300+ tenants, thousands of users across Germany, Austria & Poland",
     href: "#projects",
     image: "/images/project-fitness-saas.png",
   },
   {
     title: "SEPA Billing & POS",
-    subtitle: "Direct-debit runs & Fiskaly fiscalization",
+    subtitle: "Direct-debit automation & fiscalization — ~75% less manual back-office work",
     href: "#projects",
     image: "/images/project-sepa-pos.png",
   },
   {
     title: "B2B E-Commerce",
-    subtitle: "Catalog search, pricing & checkout APIs",
+    subtitle: "Search re-architecture: 2s → 150ms, PostgreSQL CPU load −40%",
     href: "#projects",
     image: "/images/project-b2b-commerce.png",
   },
@@ -62,13 +62,13 @@ export const jobs: Job[] = [
   {
     company: "Themisoft GmbH",
     description:
-      "Core engineer on a multi-tenant ABP fitness platform serving 300+ studios — SEPA billing, OIDC security, OCR automation, and real-time features. Cut backend latency 40% and infrastructure cost 62%.",
+      "Core engineer on a 6,800-file multi-tenant SaaS serving 300+ fitness studios. Shipped SEPA billing, OIDC security, and OCR automation that cut manual work ~75% — while cutting backend latency 40% and cloud costs 62%.",
     period: "Dec 2023 - Present",
   },
   {
     company: "EPAM Systems",
     description:
-      "Built backend services and REST APIs for a B2B e-commerce platform with CQRS, RabbitMQ, and Elasticsearch — cutting search latency from 2s to 150ms.",
+      "Built B2B e-commerce backend services with CQRS, RabbitMQ, and Elasticsearch — cut catalog search from 2s to 150ms and shipped through Dockerized CI/CD on Azure DevOps.",
     period: "May 2021 - Aug 2022",
   },
 ];
