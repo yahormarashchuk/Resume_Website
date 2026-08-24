@@ -10,7 +10,7 @@ export const navItems: NavItem[] = [
 
 export const profile = {
   name: "Yahor Marashchuk",
-  bio: "Full-Stack .NET Developer with 4+ years shipping multi-tenant SaaS used by 300+ studios across Europe.",
+  bio: "Backend .NET Developer with 4+ years building production SaaS for 300+ studios across Europe.",
   photo: "/images/yahor-profile-indigo-v3.webp",
 };
 
@@ -24,10 +24,10 @@ export const profileSocials: SocialLink[] = [
 ];
 
 export const hero = {
-  titleSolid: "FULLSTACK",
+  titleSolid: "BACKEND",
   titleGhost: "DEVELOPER",
   intro:
-    "I build multi-tenant SaaS on C#, ASP.NET Core, Blazor & Azure — and I ship measurable impact: −40% backend latency, −62% cloud costs, ~75% less manual work through automation.",
+    "I build multi-tenant .NET SaaS backends for payments, German compliance, and production traffic — with measured results: −40% response time, +35% throughput, −62% compute cost.",
 };
 
 export const stats: Stat[] = [
@@ -46,10 +46,10 @@ export const heroCards = [
   },
   {
     eyebrow: "Core stack",
-    title: ".NET · Blazor",
+    title: ".NET · ASP.NET Core",
     icon: "stack",
     href: "#tools",
-    tags: ["PostgreSQL", "Azure"],
+    tags: ["PostgreSQL", "Redis"],
   },
   {
     eyebrow: "Driving license",
@@ -70,13 +70,13 @@ export const heroCards = [
 export const projects: Project[] = [
   {
     title: "Fitness Studio SaaS",
-    subtitle: "300+ tenants, thousands of users across Germany, Austria & Poland",
+    subtitle: "300+ studios and 2,000-5,000 active users across Germany, Austria & Poland",
     href: "#projects",
     image: "/images/project-fitness-saas.png",
   },
   {
     title: "SEPA Billing & POS",
-    subtitle: "Direct-debit automation & fiscalization — ~75% less manual back-office work",
+    subtitle: "SEPA pain.008, PSD2 banking & KassenSichV-compliant POS workflows",
     href: "#projects",
     image: "/images/project-sepa-pos.png",
   },
@@ -92,24 +92,26 @@ export const jobs: Job[] = [
   {
     company: "Themisoft GmbH",
     description:
-      "Full-Stack .NET Developer on a 10-project ABP platform with 6,800+ C# files, 1,100+ application services, and 580+ EF Core migrations. The SaaS supports 300+ fitness studios and thousands of active users across Germany, Austria, and Poland.",
+      "Backend Developer (.NET) / Full-Stack on an ABP-based multi-tenant SaaS used by 300+ fitness studios and 2,000-5,000 active users across Germany, Austria, and Poland.",
     highlights: [
-      "Own end-to-end delivery across contracts, memberships, SEPA direct debit, payments, Fiskaly POS fiscalization, bookings, campaigns, communications, and studio administration.",
-      "Built subdomain-based multi-tenancy, tenant-aware entities, OpenIddict/OIDC flows, JWT issuer validation, and permission-based access; integrated FinAPI, SEPA, Fiskaly, eBrief, and MailKit.",
-      "Cut backend response time 40% and increased throughput 35% through EF Core/PostgreSQL optimization; reduced cloud costs ~62% with Redis and Hangfire, and reduced manual work ~75% through Tesseract OCR and document automation.",
-      "Maintain 300+ xUnit tests, review pull requests, support production issues, and helped onboard two developers.",
+      "Designed and shipped backend modules for contracts, memberships, SEPA direct debit, payments, POS/accounting, bookings, campaigns, communications, and studio administration.",
+      "Implemented subdomain tenant resolution, tenant-aware entities and filters, permission-based authorization, OpenIddict/OIDC, JWT, and cookie/bearer authentication.",
+      "Integrated FinAPI/PSD2, SEPA pain.008, Fiskaly TSE for KassenSichV/GoBD-compliant receipts, eBrief, and MailKit with secure tokens, callback validation, idempotency, and retry/backoff policies.",
+      "Improved response time 40% and throughput 35% through EF Core/PostgreSQL optimization; cut background-processing compute cost ~62% with Redis locks, Hangfire consolidation, and queue partitioning.",
+      "Built OCR and document-scanning workflows that reduced manual back-office work ~75%; handled incidents, hotfixes, data-integrity checks, tests, code reviews, and onboarding for two developers.",
     ],
-    stack: ["C#", ".NET 10", "ASP.NET Core", "ABP", "Blazor", "PostgreSQL", "Redis", "Hangfire", "SignalR", "Azure"],
-    period: "Dec 2023 - Present",
+    stack: ["C#", ".NET 8/9", "ASP.NET Core", "ABP", "EF Core", "PostgreSQL", "Redis", "Hangfire", "SignalR", "Azure"],
+    period: "Dec 2023 - Aug 2026",
   },
   {
     company: "EPAM Systems",
     description:
       "Junior .NET Backend Developer on a microservice-based B2B e-commerce platform for a European industrial-equipment distributor, supporting corporate ordering, dynamic pricing, catalog search, inventory, checkout, and order processing.",
     highlights: [
-      "Developed REST APIs and backend workflows for Catalog Service, Pricing Engine, Inventory Background Worker, cart, checkout, and order processing using MediatR/CQRS and RabbitMQ.",
+      "Developed REST APIs and backend workflows for Catalog Service, Pricing Engine, Inventory Background Worker, cart, checkout, order processing, and inventory synchronization.",
+      "Owned a high-load pricing endpoint used on every cart update and catalog search with filtering, pagination, and aggregations.",
       "Moved heavy catalog filtering from EF Core SQL to Elasticsearch with Redis caching, reducing average search latency from 1.5-2 seconds to ~150 ms and PostgreSQL CPU load by 40%.",
-      "Resolved inventory race conditions and malformed XML/JSON supplier feeds using Kibana logs; added unit and integration coverage with xUnit, Moq, AutoFixture, and Bogus.",
+      "Diagnosed an inventory-deduction race condition and malformed XML/JSON supplier feeds through Kibana; added unit and integration coverage with xUnit, Moq, AutoFixture, and Bogus.",
       "Delivered in Dockerized Azure DevOps CI/CD with AKS and Helm as part of a cross-functional Scrum team.",
     ],
     stack: ["C#", "ASP.NET Core", "EF Core", "PostgreSQL", "CQRS", "RabbitMQ", "Redis", "Elasticsearch", "Docker", "AKS"],
@@ -134,22 +136,28 @@ export const tools: Tool[] = [
 
 export const articles: Article[] = [
   {
-    title: "Inside a 300-Tenant SaaS: Lessons from 6,800+ C# Files",
+    title: "Building Backends for 300+ SaaS Tenants",
     excerpt:
-      "A 10-project modular monolith with 1,100+ application services and 580+ EF Core migrations only stays maintainable through strict boundaries, tenant-aware domain rules, disciplined migrations, and tests that protect business-critical workflows.",
-    meta: "Architecture · Production",
+      "Subdomain tenant resolution, tenant-aware entities and global filters, permission-based access, and issuer validation must work together so every request reaches the right studio and the right data.",
+    meta: "Multi-Tenancy · Production",
   },
   {
-    title: "Cutting Cloud Costs 62% with Redis & Hangfire",
+    title: "Reliable SEPA, PSD2 & German POS Integrations",
     excerpt:
-      "Redis-backed caching and distributed locks, combined with consolidated Hangfire workloads and better query shaping, improved throughput by 35% while helping reduce measured cloud infrastructure costs by approximately 62%.",
-    meta: "Performance · Production",
+      "Payment and compliance integrations need more than a successful HTTP call: secure token handling, callback signatures, idempotency keys, retry policies, auditability, and careful handling of financial data.",
+    meta: "Payments · Compliance",
   },
   {
-    title: "From Paperwork to Workflow: OCR in Production",
+    title: "40% Faster EF Core & PostgreSQL Workloads",
     excerpt:
-      "Tesseract OCR, barcode and webcam capture, and PDF processing turned repetitive document handling into a reliable workflow. The result was about 75% less manual back-office work without removing human review where it matters.",
-    meta: "Automation · Production",
+      "Covering indexes, projections, split queries, N+1 elimination, and EXPLAIN ANALYZE-driven query shaping reduced measured response time by 40% and increased throughput by 35%.",
+    meta: "Data · Performance",
+  },
+  {
+    title: "Cutting Background Compute Cost by 62%",
+    excerpt:
+      "Redis distributed locking, Hangfire job consolidation, and queue partitioning reduced duplicate work and helped cut compute cost for the background-processing workload by approximately 62%.",
+    meta: "Distributed Systems · Production",
   },
   {
     title: "From 2 Seconds to 150ms: Search Done Right",
@@ -158,15 +166,9 @@ export const articles: Article[] = [
     meta: "Search · Production",
   },
   {
-    title: "Why C# 14 Extension Members Matter",
+    title: "Deepening Observability & AI in .NET",
     excerpt:
-      "Extension blocks in .NET 10 go beyond familiar extension methods: they can group behavior and expose extension properties, helping APIs read more naturally while keeping reusable operations organized around the types they extend.",
-    meta: ".NET 10 · LinkedIn",
-  },
-  {
-    title: "Practical AI Skills Over Flashy Demos",
-    excerpt:
-      "The AI tools worth keeping are the ones that improve everyday engineering: clearer reasoning, more predictable output, stronger discipline, and lower token usage. Practicality and repeatability matter more than a one-off impressive demo.",
-    meta: "AI Tooling · LinkedIn",
+      "Currently exploring .NET Aspire and OpenTelemetry for observable distributed systems, plus Semantic Kernel, Azure OpenAI, and pgvector-backed RAG for practical LLM integration in .NET applications.",
+    meta: "Currently Learning",
   },
 ];

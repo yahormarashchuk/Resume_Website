@@ -16,14 +16,17 @@ const satoshi = localFont({
 });
 
 export const metadata: Metadata = {
-  title: "Yahor Marashchuk — Full-Stack .NET Developer",
+  metadataBase: new URL("https://yahor-marashchuk.vercel.app"),
+  title: "Yahor Marashchuk — Backend .NET Developer",
   description:
-    "Full-Stack .NET Developer building multi-tenant SaaS and enterprise web applications with C#, ASP.NET Core, Blazor, and Azure.",
+    "Backend .NET Developer building multi-tenant SaaS with C#, ASP.NET Core, EF Core, PostgreSQL, Redis, Docker, and Azure.",
   icons: { icon: "/seo/favicon.png" },
+  alternates: { canonical: "/" },
   openGraph: {
-    title: "Yahor Marashchuk — Full-Stack .NET Developer",
+    url: "/",
+    title: "Yahor Marashchuk — Backend .NET Developer",
     description:
-      "Full-Stack .NET Developer building multi-tenant SaaS and enterprise web applications with C#, ASP.NET Core, Blazor, and Azure.",
+      "Backend .NET Developer building multi-tenant SaaS with C#, ASP.NET Core, EF Core, PostgreSQL, Redis, Docker, and Azure.",
     images: ["/seo/og-image.png"],
   },
 };

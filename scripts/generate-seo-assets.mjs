@@ -25,8 +25,8 @@ const og = `<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" vi
   <circle cx="80" cy="580" r="280" fill="${CYAN}" opacity="0.10"/>
   <text x="80" y="250" font-family="Arial, Helvetica, sans-serif" font-size="92" font-weight="bold" fill="${CREAM}">YAHOR</text>
   <text x="80" y="350" font-family="Arial, Helvetica, sans-serif" font-size="92" font-weight="bold" fill="${GHOST}">MARASHCHUK</text>
-  <text x="80" y="440" font-family="Arial, Helvetica, sans-serif" font-size="40" font-weight="bold" fill="${INDIGO}">FULL-STACK .NET DEVELOPER</text>
-  <text x="80" y="500" font-family="Arial, Helvetica, sans-serif" font-size="28" fill="#8b93a8">C# · ASP.NET Core · Blazor · PostgreSQL · Azure</text>
+  <text x="80" y="440" font-family="Arial, Helvetica, sans-serif" font-size="40" font-weight="bold" fill="${INDIGO}">BACKEND .NET DEVELOPER</text>
+  <text x="80" y="500" font-family="Arial, Helvetica, sans-serif" font-size="28" fill="#8b93a8">C# · ASP.NET Core · EF Core · PostgreSQL · Redis · Azure</text>
 </svg>`;
 writeFileSync("public/seo/og-image.png", await sharp(Buffer.from(og)).resize(1200, 630).png().toBuffer());
 console.log("OK og-image.png");
